@@ -58,7 +58,6 @@ class Game
     @choices[v.to_i - 1] = 'Y'
     puts draw_board
     @player1_choices.push(v.to_i)
-    @choices.delete((@choices.index(v.to_i - 1)))
     puts "Choose a number from this set #{@choices.join(' ')}"
   end
 
@@ -76,7 +75,6 @@ class Game
     @choices[v.to_i - 1] = 'X'
     draw_board
     @player2_choices.push(v.to_i)
-    @choices.delete((@choices.index(v.to_i - 1)))
     puts "Choose a number from this set #{@choices.join(' ')}"
   end
 
