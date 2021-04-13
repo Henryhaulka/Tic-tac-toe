@@ -89,9 +89,6 @@ class Game
       user2_turn
       i += 2
     end
-    if 
-    game_on = false
-  end
 
     puts "it's a DRAW"
     puts ''
