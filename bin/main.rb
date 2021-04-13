@@ -33,7 +33,7 @@ class Game
 
     while @player1 == @player2
       puts "Player names should not be the same, #{@player2} put another name"
-      @player2 = gets.chomp
+      @player2 = gets.chomp.upcase
     end
 
     @players = { @player1 => 'x', @player2 => 'o' }
