@@ -1,4 +1,3 @@
-
 class Game
   def initialize()
     @player1 = ''
