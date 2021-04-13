@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 class Game
   def initialize()
     @player1 = ''
