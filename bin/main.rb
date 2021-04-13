@@ -22,18 +22,20 @@ class Game
   def use_data
     puts "Welcome to Ruby's tic tac toe"
     puts 'type the name of the 1st player'
-    @player1 = gets.chomp.upcase
+    @player1 = gets.chomp.upcase.strip
     until @player1 != ''
       puts 'Player name should not be blank'
-      @player1 = gets.chomp
+      @player1 = gets.chomp.strip
     end
     puts 'type the name of the 2nd player'
-    @player2 = gets.chomp.upcase
-    puts 'Player name should not be blank' until @player2 != ''
-
+    @player2 = gets.chomp.upcase.strip
+    until @player2 != ''
+      puts 'Player name should not be blank'
+      @player2 = gets.chomp.upcase.strip
+    end
     while @player1 == @player2
       puts "Player names should not be the same, #{@player2} put another name"
-      @player2 = gets.chomp.upcase
+      @player2 = gets.chomp.upcase.strip
     end
 
     @players = { @player1 => 'x', @player2 => 'o' }
@@ -49,13 +51,15 @@ class Game
     end
 
     while @player1_choices.include? v.to_i or @player2_choices.include? v.to_i
-      puts "please pick another choice, #{v.to_i} been taken "
+      puts 'cell has ben taken, select an available cell from the board (1 -9)'
       v = gets.chomp
     end
 
-    @choices[v.to_i - 1] = 'O'
+    @choices[v.to_i - 1] = 'Y'
     puts draw_board
     @player1_choices.push(v.to_i)
+    @choices.delete((@choices.index(v.to_i - 1)))
+    puts "Choose a number for this set #{@choices.join(' ')}"
   end
 
   def user2_turn
@@ -66,24 +70,26 @@ class Game
       v = gets.chomp
     end
     while @player1_choices.include? v.to_i or @player2_choices.include? v.to_i
-      puts "please pick another choice, #{v.to_i} been taken "
+      puts 'cell has ben taken, select an available cell from the board (1 -9)'
       v = gets.chomp
     end
     @choices[v.to_i - 1] = 'X'
     draw_board
     @player2_choices.push(v.to_i)
+    @choices.delete((@choices.index(v.to_i - 1)))
+    puts "Choose a number for this set #{@choices.join(' ')}"
   end
 
   def run_turns
     system('clear')
+    game_on = true
     i = 0
-    while i <= 7
-
+    while game_on && i <= 7
       user1_turn
       user2_turn
       i += 2
-
     end
+
     puts "it's a DRAW"
     puts ''
     puts "#{@player1} is the  WINNER!!!"
