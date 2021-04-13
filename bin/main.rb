@@ -59,7 +59,7 @@ class Game
     puts draw_board
     @player1_choices.push(v.to_i)
     @choices.delete((@choices.index(v.to_i - 1)))
-    puts "Choose a number for this set #{@choices.join(' ')}"
+    puts "Choose a number from this set #{@choices.join(' ')}"
   end
 
   def user2_turn
@@ -77,7 +77,7 @@ class Game
     draw_board
     @player2_choices.push(v.to_i)
     @choices.delete((@choices.index(v.to_i - 1)))
-    puts "Choose a number for this set #{@choices.join(' ')}"
+    puts "Choose a number from this set #{@choices.join(' ')}"
   end
 
   def run_turns
