@@ -88,13 +88,7 @@ class Game
       i += 2
     end
 
-    puts "it's a DRAW"
-    puts ''
-    puts "#{@player1} is the  WINNER!!!"
-    puts ''
-    puts "Better luck next time  #{@player2}"
-
-    puts 'GAME OVER!!!'
+   
   end
 
   def run_game
