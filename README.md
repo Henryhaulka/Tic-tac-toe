@@ -22,7 +22,7 @@
 3. The first player to get 3 of the marks in a row (up, down, across, or diagonally) is the winner.
 4. When all 9 squares are replaced with the numbers, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
-## Live Demo
+
 
 
 ## Live demo usage instruction

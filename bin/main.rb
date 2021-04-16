@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
+require_relative '../lib/logic'
+require_relative '../lib/player'
 class Game
+  attr_reader :player1_choices, :player2_choices
+
   def initialize()
     @player1 = ''
     @player2 = ''
@@ -22,18 +26,20 @@ class Game
   def use_data
     puts "Welcome to Ruby's tic tac toe"
     puts 'type the name of the 1st player'
-    @player1 = gets.chomp.upcase.strip
-    until @player1 != ''
-      puts 'Player name should not be blank'
-      @player1 = gets.chomp.strip
+    checked_name = false
+    while checked_name == false
+      @player1 = gets.chomp.upcase.strip
+      checked_name = Player.new.name_check(@player1)
+      p 'Player name should not be blank' if checked_name == false
     end
     puts 'type the name of the 2nd player'
-    @player2 = gets.chomp.upcase.strip
-    until @player2 != ''
-      puts 'Player name should not be blank'
+    checked_name = false
+    while checked_name == false
       @player2 = gets.chomp.upcase.strip
+      checked_name = Player.new.name_check(@player2)
+      puts 'Player name should not be blank' if checked_name == false
     end
-    while @player1 == @player2
+    while @player1 == @player2 && @player2 != ''
       puts "Player names should not be the same, #{@player2} put another name"
       @player2 = gets.chomp.upcase.strip
     end
@@ -82,19 +88,30 @@ class Game
     system('clear')
     game_on = true
     i = 0
-    while game_on && i <= 7
+    checker2 = []
+    while game_on
+
       user1_turn
+      i += 1
+      checker1 = Logic.new.win_combination1(@player1_choices)
+      winner_checker = Logic.new.win_checker(checker1, checker2)
+      if winner_checker == true
+        puts "#{@player1} is the winner"
+        break
+      end
+      if i == 9
+        puts "it's  a TIE"
+        break
+      end
       user2_turn
-      i += 2
+      i += 1
+      checker2 = Logic.new.win_combination2(@player2_choices)
+      winner_checker = Logic.new.win_checker(checker1, checker2)
+      next unless winner_checker == true
+
+      puts "#{@player2} is the winner"
+      break
     end
-
-    puts "it's a DRAW"
-    puts ''
-    puts "#{@player1} is the  WINNER!!!"
-    puts ''
-    puts "Better luck next time  #{@player2}"
-
-    puts 'GAME OVER!!!'
   end
 
   def run_game
@@ -106,3 +123,4 @@ end
 
 p = Game.new
 p.run_game
+puts 'GAME over'
