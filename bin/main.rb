@@ -105,7 +105,7 @@ class Game
       end
       user2_turn
       i += 1
-      checker2 = Logic.new.win_combination1(@player2_choices)
+      checker2 = Logic.new.win_combination2(@player2_choices)
       winner_checker = Logic.new.win_checker(checker1, checker2)
       next unless winner_checker == true
 
