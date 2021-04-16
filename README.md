@@ -22,12 +22,12 @@
 3. The first player to get 3 of the marks in a row (up, down, across, or diagonally) is the winner.
 4. When all 9 squares are replaced with the numbers, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
+
 ![screenshot](img/ttt1.png)
 ![screenshot](img/ttt2.png)
 
 
 ## Usage instruction
-
 1. Make sure the game displayed on the shell.
 2. Run `cd bin/`
 3. Run `main.rb` to start the game.
@@ -58,4 +58,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
+
 This project is [MIT](./LICENSE) lice
+
