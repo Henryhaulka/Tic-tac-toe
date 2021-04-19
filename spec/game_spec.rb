@@ -1,4 +1,5 @@
 require './bin/main'
+require './lib/logic'
 describe Player do
   describe '#name_check' do
     player = Player.new
