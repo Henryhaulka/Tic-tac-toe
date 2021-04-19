@@ -1,4 +1,4 @@
-require_relative '../bin/main'
+require './bin/main'
 require_relative '../lib/logic'
 require_relative '../lib/player' 
 
