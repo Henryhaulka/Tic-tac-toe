@@ -120,8 +120,8 @@ class Game
     run_turns
   end
 end
-=begin
+
 p = Game.new
 p.run_game
 puts 'GAME over'
-=end
+
