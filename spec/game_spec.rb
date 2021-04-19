@@ -46,6 +46,23 @@ describe Logic do
       player1_choices = [1, 3, 4, 2]
       expect(checker.win_combination1(player1_choices)).to eql([[1, 2, 3]])
     end
+
+    it 'returns an array without elements' do
+      player2_choices = [1, 5, 7, 8]
+      expect(checker.win_combination2(player2_choices)).to eql([])
+    end
+
+    it 'returns an array with matching winning combination' do
+      player2_choices = [7, 8, 9, 2]
+      expect(checker.win_combination2(player2_choices)).to eql([[7, 8, 9]])
+    end
+  end
+
+  describe '#win_checker' do
+    it 'returns true if player array has a winning combination' do
+      win_combination = [7, 8, 9]
+      checker.win_checker(win_combination, win_combination)
+    end
   end
 end
 
