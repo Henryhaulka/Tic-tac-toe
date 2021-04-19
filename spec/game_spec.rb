@@ -9,7 +9,7 @@ describe Player do
 end
 describe Game do
   describe '#user1_turn' do
-    v = STDIN.gets
+    v = $stdin.gets
     it 'checks if the moves are between 1-9 on the board' do
       expect(v.to_i.between?(1, 9)).to eq(false)
     end
@@ -21,7 +21,7 @@ describe Game do
     end
   end
   describe '#user2_turn' do
-    v = STDIN.gets
+    v = $stdin.gets
     it 'checks if the moves are between 1-9 on the board' do
       expect(v.to_i.between?(1, 9)).to eq(false)
     end
