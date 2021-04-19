@@ -1,7 +1,6 @@
-require_relative '../bin/main'
+require './bin/main'
 require_relative '../lib/logic'
-require_relative '../lib/player'
-
+require_relative '../lib/player' 
 describe Player do
   describe '#name_check' do
     player = Player.new
