@@ -7,6 +7,13 @@ describe Player do
       expect(player.name_check('')).to eql(false)
     end
   end
+  describe '#use_data' do
+   @player1 = gets.chomp.upcase.strip
+   @player2 = gets.chomp.upcase.strip
+   it 'checks if player name is equal' do
+    expect(@player1 == @player2).to eql(true)
+   end
+end
 end
 describe Game do
   describe '#user1_turn' do
