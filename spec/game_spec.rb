@@ -40,23 +40,23 @@ describe Logic do
   checker = Logic.new
   describe '#win_combination' do
     it 'returns an array without elements' do
-      @player1_choices = [2, 4, 7, 8]
-      expect(checker.win_combination1(@player1_choices)).to eql([])
+      player1_choices = [2, 4, 7, 8]
+      expect(checker.win_combination1(player1_choices)).to eql([])
     end
 
     it 'returns an array with matching winning combination' do
-      @player1_choices = [1, 3, 4, 2]
-      expect(checker.win_combination1(@player1_choices)).to eql([[1, 2, 3]])
+      player1_choices = [1, 3, 4, 2]
+      expect(checker.win_combination1(player1_choices)).to eql([[1, 2, 3]])
     end
 
     it 'returns an array without elements' do
-      @player2_choices = [1, 5, 7, 8]
-      expect(checker.win_combination2(@player2_choices)).to eql([])
+      player2_choices = [1, 5, 7, 8]
+      expect(checker.win_combination2(player2_choices)).to eql([])
     end
 
     it 'returns an array with matching winning combination' do
-      @player2_choices = [7, 8, 9, 2]
-      expect(checker.win_combination2(@player2_choices)).to eql([[7, 8, 9]])
+      player2_choices = [7, 8, 9, 2]
+      expect(checker.win_combination2(player2_choices)).to eql([[7, 8, 9]])
     end
   end
 
