@@ -121,7 +121,7 @@ class Game
   end
 end
 
-p = Game.new
-p.run_game
-puts 'GAME over'
+#p = Game.new
+#p.run_game
+#puts 'GAME over'
 
