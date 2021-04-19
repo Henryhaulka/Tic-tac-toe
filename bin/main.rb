@@ -85,7 +85,7 @@ class Game
   end
 
   def run_turns
-    system('clear')
+    # system('clear')
     game_on = true
     i = 0
     checker2 = []
