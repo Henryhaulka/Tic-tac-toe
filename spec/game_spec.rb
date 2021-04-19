@@ -70,7 +70,7 @@ describe Logic do
   describe '#win_checker' do
     it 'returns true if player array has a winning combination' do
       win_combination = [7, 8, 9]
-     expect(checker.win_checker(win_combination, win_combination)).to eql(true)
+      expect(checker.win_checker(win_combination, win_combination)).to eql(true)
     end
   end
 end
