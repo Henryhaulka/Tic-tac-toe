@@ -85,7 +85,7 @@ class Game
   end
 
   def run_turns
-    system('clear')
+    # system('clear')
     game_on = true
     i = 0
     checker2 = []
@@ -121,6 +121,6 @@ class Game
   end
 end
 
-p = Game.new
-p.run_game
-puts 'GAME over'
+# p = Game.new
+# p.run_game
+# puts 'GAME over'
