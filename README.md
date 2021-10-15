@@ -10,10 +10,10 @@
 
 ## Getting Started
 
-- **Clone the repo by running `git clone` https://github.com/Henryhaulka/Tic-tac-toe Or download the zip folder**
+- **Clone the repo by running `git clone` git@github.com:Solenka1/enumerables_microverse.gitOr download the zip folder**
 - **Run `cd` tic_tac_toe in the terminal**
 - **Make sure you have ruby installed locally run `ruby -v`**
-- **To start the game run `bin/main.rb` in the terminal**
+- **To start the tests run `rspec` in the terminal**
 
 ### Game Instructions
 
