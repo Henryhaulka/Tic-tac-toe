@@ -14,8 +14,8 @@ class Logic
   def win_checker(checker1, checker2)
     if win_set.include? checker1.flatten
       true
-    else win_set.include? checker2.flatten
-
+    elsif win_set.include? checker2.flatten
+      true
     end
   end
 end
